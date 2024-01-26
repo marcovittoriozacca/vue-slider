@@ -50,6 +50,9 @@ data() {
         if(this.activePhoto < 0){
             this.activePhoto = this.images.length - 1
         }
-      }  
+      },
+      thumbClick(index){
+        this.activePhoto = index;
+      }
     },
 }).mount('#app')

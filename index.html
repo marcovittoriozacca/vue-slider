@@ -25,8 +25,8 @@
                         <span id="description" class="text-white  position-absolute fs-4 fw-bolder "></span>
                     </div>
                     <div id="thumbnail" class="d-flex flex-column h-100 position-relative">
-                        <img v-for="(img, index) in images" class="smallone" :src="img.url" :alt="img.titolo">
-
+                        <img v-for="(img, index) in images" @click="thumbClick(index)"  :class="(activePhoto == index) ? 'activeImageOpacity' : '' " class="smallone" :src="img.url" :alt="img.titolo">
+                        
                         <i @click="prevImg" class="fas fa-angle-up position-absolute btn-up"></i>
                         <i @click="nextImg" class="fas fa-angle-down position-absolute btn-down"></i>
                     </div>
