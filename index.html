@@ -21,8 +21,8 @@
                         <div id="activePhoto">
                             <img :src="images[activePhoto].url" :alt="images[activePhoto].titolo">
                         </div>
-                        <span id="title" class="text-white position-absolute fs-2"></span>
-                        <span id="description" class="text-white  position-absolute fs-4 fw-bolder "></span>
+                        <span id="title" class="text-white position-absolute fs-2">{{images[activePhoto].titolo}}</span>
+                        <span id="description" class="text-white  position-absolute fs-4 fw-bolder ">{{images[activePhoto].descrizione}}</span>
                     </div>
                     <div id="thumbnail" class="d-flex flex-column h-100 position-relative">
                         <img v-for="(img, index) in images" @click="thumbClick(index)"  :class="(activePhoto == index) ? 'activeImageOpacity' : '' " class="smallone" :src="img.url" :alt="img.titolo">
