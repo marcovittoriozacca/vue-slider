@@ -4,6 +4,7 @@ createApp({
 data() {
     return {
         activePhoto: 0,
+        timingFunctionVar: null,
         images: [
             {
                 url: './assets/img/miles-morales.jpg',
@@ -38,6 +39,9 @@ data() {
         ]
     }
 },
+created() {
+    this.autoplay();
+},
     methods: {
       nextImg(){
         this.activePhoto++;
@@ -53,6 +57,14 @@ data() {
       },
       thumbClick(index){
         this.activePhoto = index;
+      },
+      autoplay(){
+        this.timingFunctionVar = setInterval( () => {
+            this.nextImg();
+        }, 3000);
+      },
+      stopAutoplay(){
+        clearInterval(this.timingFunctionVar);
       }
     },
 }).mount('#app')

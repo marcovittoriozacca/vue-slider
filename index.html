@@ -16,7 +16,7 @@
     <div id="app">
         <div class="vh-100 d-flex align-items-center justify-content-center flex-column ">
             <div class="rounded-1">
-                <div id="carouselContainer" class="d-flex carouselBox">
+                <div @mouseover="stopAutoplay" @mouseleave="autoplay"  id="carouselContainer" class="d-flex carouselBox">
                     <div class="h-100 position-relative">
                         <div id="activePhoto">
                             <img :src="images[activePhoto].url" :alt="images[activePhoto].titolo">
