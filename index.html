@@ -19,26 +19,22 @@
                 <div id="carouselContainer" class="d-flex carouselBox">
                     <div class="h-100 position-relative">
                         <div id="activePhoto">
-                            <img src="./assets/img/miles-morales.jpg" alt="">
+                            <img :src="images[activePhoto].url" :alt="images[activePhoto].titolo">
                         </div>
                         <span id="title" class="text-white position-absolute fs-2"></span>
                         <span id="description" class="text-white  position-absolute fs-4 fw-bolder "></span>
                     </div>
                     <div id="thumbnail" class="d-flex flex-column h-100 position-relative">
-                        <img class="smallone" src="./assets/img/hollow-knight.jpg" alt="">
-                        <img class="smallone" src="./assets/img/hollow-knight.jpg" alt="">
-                        <img class="smallone" src="./assets/img/hollow-knight.jpg" alt="">
-                        <img class="smallone" src="./assets/img/hollow-knight.jpg" alt="">
-                        <img class="smallone" src="./assets/img/hollow-knight.jpg" alt="">
-                        <img class="smallone" src="./assets/img/hollow-knight.jpg" alt="">
-                        <i class="fas fa-angle-up position-absolute btn-up"></i>
-                        <i class="fas fa-angle-down position-absolute btn-down"></i>
+                        <img v-for="(img, index) in images" class="smallone" :src="img.url" :alt="img.titolo">
+
+                        <i @click="prevImg" class="fas fa-angle-up position-absolute btn-up"></i>
+                        <i @click="nextImg" class="fas fa-angle-down position-absolute btn-down"></i>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js' integrity='sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg==' crossorigin='anonymous'></script>        
 

@@ -3,6 +3,7 @@ const { createApp } = Vue
 createApp({
 data() {
     return {
+        activePhoto: 0,
         images: [
             {
                 url: './assets/img/miles-morales.jpg',
@@ -36,5 +37,19 @@ data() {
             },
         ]
     }
-}
+},
+    methods: {
+      nextImg(){
+        this.activePhoto++;
+        if(this.activePhoto > this.images.length - 1){
+            this.activePhoto = 0
+        }
+      },
+      prevImg(){
+        this.activePhoto--;
+        if(this.activePhoto < 0){
+            this.activePhoto = this.images.length - 1
+        }
+      }  
+    },
 }).mount('#app')
